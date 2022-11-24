@@ -1,0 +1,114 @@
+:root {
+    font-family: 'Franklin Gothic Medium';
+    font-size: 44;
+    font-weight: bold;
+    color: black;
+
+}
+
+.animated-grid {
+    height: auto;
+    margin-bottom: 200px;
+
+    display: grid;
+    gap: 1rem;
+
+    grid-template-areas:
+        'a  b   c   d'
+        'e  f   g   h';
+
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: repeat(2, auto);
+
+    --stagger-delay: 200ms;
+/* Animated Grid */
+
+}
+
+/*Smaller Screens, media query*/
+@media only screen and (max-width: 600px) {
+
+}
+
+/*Larger Screens, Media query*/
+@media only screen and (min-width: 600px) {
+
+}
+
+/* Modified scroll bar, thin profile*/
+body::-webkit-scrollbar {
+    width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+    background: #1e1e24;
+}
+
+body::-webkit-scrollbar-thumb { 
+    background: #6649b8;
+}
+
+main {
+    margin-left: 5rem;
+    padding: 1rem;
+}
+
+@keyframes cardEntrance {
+    from {
+        opacity: 0;
+        transform: scale(0.3);
+        filter:hue-rotate(0deg);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+        filter:hue-rotate(360deg);
+    }
+}
+
+.card {
+    background-color: transparent;
+    animation: cardEntrance 700ms ease-in-out;
+    animation-fill-mode: both;
+}
+
+.card:nth-child(1) {
+    grid-area: a;
+    animation-delay: calc(var(--stagger-delay) * 1);
+}
+
+.card:nth-child(2) {
+    grid-area: b;
+    animation-delay: calc(var(--stagger-delay) * 2);
+}
+
+.card:nth-child(3) {
+    grid-area: c;
+    animation-delay: calc(var(--stagger-delay) * 3);
+}
+
+.card:nth-child(4) {
+    grid-area: d;
+    animation-delay: calc(var(--stagger-delay) * 4);
+}
+
+.card:nth-child(5) {
+    grid-area: e;
+    animation-delay: calc(var(--stagger-delay) * 5);
+}
+
+.card:nth-child(6) {
+    grid-area: f;
+    animation-delay: calc(var(--stagger-delay) * 6);
+}
+
+.card:nth-child(7) {
+    grid-area: g;
+    animation-delay: calc(var(--stagger-delay) * 7);
+}
+
+.card:last-child(8) {
+    grid-area: h;
+    animation-delay: calc(var(--stagger-delay) * 8);
+}
+
